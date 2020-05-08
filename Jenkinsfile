@@ -19,9 +19,9 @@ pipeline {
 		}
 
 		stage('Updated Trusted Repositories') {
-			when {
-				branch 'master'
-			}
+			//when {
+			//	branch 'master'
+			//}
 
 			steps {
 				sh 'git reset --hard origin/master'
