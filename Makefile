@@ -6,7 +6,7 @@ CORRECT_YAMLS := $(YAML_FILES:=.fix)
 INSTALL_YAMLS := $(LOCK_FILES:=.install)
 UPDATE_TRUSTED_IUC := $(LOCK_FILES:.lock=.update_trusted_iuc)
 
-GALAXY_SERVER := https://usegalaxy.eu
+GALAXY_SERVER := https://test.usegalaxy.no
 
 
 help:
@@ -34,15 +34,16 @@ install: $(INSTALL_YAMLS) ## Install the tools in our galaxy
 
 update_trusted: $(UPDATE_TRUSTED_IUC) ## Run the update script
 	@# Missing --without, so this updates all tools in the file.
-	python scripts/update-tool.py cheminformatics.yaml
-	python scripts/update-tool.py imaging.yaml
-	python scripts/update-tool.py tools_iuc.yaml
-	python scripts/update-tool.py earlhaminst.yaml
-	python scripts/update-tool.py rnateam.yaml
-	python scripts/update-tool.py bgruening.yaml
-	python scripts/update-tool.py tools_galaxyp.yaml
-	python scripts/update-tool.py single-cell-ebi-gxa.yaml
-	python scripts/update-tool.py genome-annotation.yaml
+	#python scripts/update-tool.py cheminformatics.yaml
+	#python scripts/update-tool.py imaging.yaml
+	#python scripts/update-tool.py tools_iuc.yaml
+	#python scripts/update-tool.py earlhaminst.yaml
+	#python scripts/update-tool.py rnateam.yaml
+	#python scripts/update-tool.py bgruening.yaml
+	#python scripts/update-tool.py tools_galaxyp.yaml
+	#python scripts/update-tool.py single-cell-ebi-gxa.yaml
+	#python scripts/update-tool.py genome-annotation.yaml
+	python scripts/update-tool.py torfinn-tester.yaml
 
 update_all: $(UPDATED_YAMLS)
 

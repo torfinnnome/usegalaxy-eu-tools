@@ -1,4 +1,7 @@
 pipeline {
+	environment {
+		GALAXY_API_KEY = credentials('GALAXY_API_KEY')
+	}
 	agent {
 		docker {
 			image 'python:2.7'
@@ -33,8 +36,8 @@ pipeline {
 				sh 'mkdir -p ~/.ssh'
 				sh 'ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts'
 
-				sshagent(['21341801-8530-459e-bed7-40057c7b98ff']) {
-					sh 'git push git@github.com:usegalaxy-eu/usegalaxy-eu-tools.git master'
+				sshagent(['usegalaxy.no']) {
+					sh 'git push git@github.com:torfinnnome/usegalaxy-eu-tools.git master'
 				}
 			}
 		}
